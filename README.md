@@ -8,8 +8,10 @@
   Gatsby Portfolio Component
 </h1>
 
+<div align="center">
 Simple example of portfolio component based on Gatsby using React Hooks.
 
 Demo can be found [**here**](https://mpetricek.github.io/gatsby-portfolio-component/)
+</div>
 
 <!-- AUTO-GENERATED-CONTENT:END -->
