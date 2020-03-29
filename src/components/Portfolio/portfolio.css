@@ -1,0 +1,216 @@
+.portfolio {
+  display: flex;
+  flex-flow: wrap;
+  font-family: "Arial";
+  color: white;
+  --purple: rebeccapurple;
+  --blue: rgb(27, 154, 177);
+}
+
+.portfolio__item {
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2rem;
+
+  cursor: pointer;
+}
+.portfolio__item a, .portfolio__lightbox .lightbox__content a {
+  color: white;
+  text-decoration: none;
+  background: var(--purple);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 1rem;
+  border-radius: 1000rem;
+}
+
+.portfolio .item__technologies p {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  background: var(--blue);
+  padding: 0 .5rem;
+  border-radius: 1000rem;
+  margin-left: .2rem;
+  margin-right: .2rem;
+}
+.portfolio__item .item__image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.portfolio__item .item__image:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.2s;
+}
+.portfolio__item:hover .item__image:after {
+  background: rgba(0, 0, 0, 0.3);
+}
+.portfolio .item__image, .portfolio .item__image > div {
+  height: 100%;
+}
+
+.portfolio__lightbox {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.portfolio__lightbox .lightbox__overlay {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.portfolio__lightbox .lightbox__content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  height: 30rem;
+}
+
+.portfolio__lightbox .lightbox__content--slide-left {
+  animation: slideRight 0.35s ease-in;
+}
+.portfolio__lightbox .lightbox__content--slide-right {
+  animation: slideLeft 0.35s ease-in;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  20% {
+    transform: translateX(-30%) translateY(-50%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(80%) translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  20% {
+    transform: translateX(30%) translateY(-50%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(-30%) translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.portfolio__lightbox .lightbox__content h2,
+.portfolio__lightbox .lightbox__content a,
+.portfolio__lightbox .item__technologies   {
+  position: absolute;
+  left: 2rem;
+}
+.portfolio__lightbox .lightbox__content a {
+  bottom: 2rem;
+}
+
+.portfolio__lightbox .lightbox__content h2 {
+  bottom: 6rem;
+  text-shadow: 0.2rem 0.2rem 1rem black;
+}
+
+.portfolio__lightbox .item__technologies {
+  bottom: 5rem;
+}
+
+.portfolio__lightbox .item__technologies p {
+  margin-bottom: 0;
+}
+
+.portfolio__lightbox .lightbox__close,
+.portfolio__lightbox .lightbox__previous,
+.portfolio__lightbox .lightbox__next {
+  width: 2rem;
+  height: 2rem;
+  background: var(--purple);
+  display: block;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 1000rem;
+  z-index: 1;
+color: white;
+cursor: pointer;
+}
+
+.portfolio__lightbox .lightbox__previous:after {
+    content: "\2B9C";
+}
+.portfolio__lightbox .lightbox__next:after {
+    content: "\2B9E";
+}
+.portfolio__lightbox .lightbox__close:after {
+    content: "×";
+}
+.portfolio__lightbox .lightbox__close {
+  top: -2rem;
+  right: 0;
+}
+.portfolio__lightbox .lightbox__previous {
+  left: 2%;
+}
+.portfolio__lightbox .lightbox__next {
+  right: 2%;
+}
+@media (min-width: 768px) {
+  .portfolio__item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .portfolio__item {
+    width: calc(100% / 3);
+  }
+  .portfolio__lightbox .lightbox__content {
+    width: 50%;
+  }
+  .portfolio__lightbox .lightbox__previous {
+    left: 20%;
+  }
+  .portfolio__lightbox .lightbox__next {
+    right: 20%;
+  }
+}
