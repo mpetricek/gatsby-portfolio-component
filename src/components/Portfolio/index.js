@@ -27,8 +27,8 @@ export default () => {
   `)
 
     const [lightBox, setLightBox] = React.useState(false)
-    const [slideSide, setSlideSide] = React.useState(null)
     const [currentIndex, setCurrentIndex] = React.useState(0)
+    const [slideSide, setSlideSide] = React.useState(null)
 
     const items = data.allDataJson.edges;
 
