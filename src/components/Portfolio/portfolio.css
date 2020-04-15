@@ -165,10 +165,10 @@
 }
 
 .portfolio__modal .modal__previous:after {
-  content: "\2B9C";
+  content: "⮘";
 }
 .portfolio__modal .modal__next:after {
-  content: "\2B9E";
+  content: "⮚";
 }
 .portfolio__modal .modal__close:after {
   content: "×";
