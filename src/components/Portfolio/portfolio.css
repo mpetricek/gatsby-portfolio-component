@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 .portfolio__item a,
-.portfolio__lightbox .lightbox__content a {
+.portfolio__modal .modal__content a {
   color: white;
   text-decoration: none;
   background: var(--purple);
@@ -66,7 +66,7 @@
   height: 100%;
 }
 
-.portfolio__lightbox {
+.portfolio__modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -75,7 +75,7 @@
   z-index: 999;
 }
 
-.portfolio__lightbox .lightbox__overlay {
+.portfolio__modal .modal__overlay {
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
@@ -84,7 +84,7 @@
   left: 0;
 }
 
-.portfolio__lightbox .lightbox__content {
+.portfolio__modal .modal__content {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -94,10 +94,10 @@
   height: 30rem;
 }
 
-.portfolio__lightbox .lightbox__content--slide-left {
+.portfolio__modal .modal__content--slide-left {
   animation: slideLeft 0.2s ease-out;
 }
-.portfolio__lightbox .lightbox__content--slide-right {
+.portfolio__modal .modal__content--slide-right {
   animation: slideRight 0.2s ease-out;
 }
 
@@ -124,32 +124,32 @@
   }
 }
 
-.portfolio__lightbox .lightbox__content h2,
-.portfolio__lightbox .lightbox__content a,
-.portfolio__lightbox .item__technologies {
+.portfolio__modal .modal__content h2,
+.portfolio__modal .modal__content a,
+.portfolio__modal .item__technologies {
   position: absolute;
   left: 2rem;
 }
-.portfolio__lightbox .lightbox__content a {
+.portfolio__modal .modal__content a {
   bottom: 2rem;
 }
 
-.portfolio__lightbox .lightbox__content h2 {
+.portfolio__modal .modal__content h2 {
   bottom: 6rem;
   text-shadow: 0.2rem 0.2rem 1rem black;
 }
 
-.portfolio__lightbox .item__technologies {
+.portfolio__modal .item__technologies {
   bottom: 5rem;
 }
 
-.portfolio__lightbox .item__technologies p {
+.portfolio__modal .item__technologies p {
   margin-bottom: 0;
 }
 
-.portfolio__lightbox .lightbox__close,
-.portfolio__lightbox .lightbox__previous,
-.portfolio__lightbox .lightbox__next {
+.portfolio__modal .modal__close,
+.portfolio__modal .modal__previous,
+.portfolio__modal .modal__next {
   width: 2rem;
   height: 2rem;
   background: var(--purple);
@@ -164,23 +164,23 @@
   cursor: pointer;
 }
 
-.portfolio__lightbox .lightbox__previous:after {
+.portfolio__modal .modal__previous:after {
   content: "\2B9C";
 }
-.portfolio__lightbox .lightbox__next:after {
+.portfolio__modal .modal__next:after {
   content: "\2B9E";
 }
-.portfolio__lightbox .lightbox__close:after {
+.portfolio__modal .modal__close:after {
   content: "×";
 }
-.portfolio__lightbox .lightbox__close {
+.portfolio__modal .modal__close {
   top: -2rem;
   right: 0;
 }
-.portfolio__lightbox .lightbox__previous {
+.portfolio__modal .modal__previous {
   left: 2%;
 }
-.portfolio__lightbox .lightbox__next {
+.portfolio__modal .modal__next {
   right: 2%;
 }
 @media (min-width: 768px) {
@@ -193,13 +193,13 @@
   .portfolio__item {
     width: calc(100% / 3);
   }
-  .portfolio__lightbox .lightbox__content {
+  .portfolio__modal .modal__content {
     width: 50%;
   }
-  .portfolio__lightbox .lightbox__previous {
+  .portfolio__modal .modal__previous {
     left: 20%;
   }
-  .portfolio__lightbox .lightbox__next {
+  .portfolio__modal .modal__next {
     right: 20%;
   }
 }

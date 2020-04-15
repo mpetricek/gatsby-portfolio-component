@@ -26,7 +26,7 @@ export default () => {
     }
   `)
 
-    const [lightBox, setLightBox] = React.useState(false)
+    const [modal, setModal] = React.useState(false)
     const [currentIndex, setCurrentIndex] = React.useState(0)
     const [slideSide, setSlideSide] = React.useState(null)
 
@@ -35,7 +35,7 @@ export default () => {
     const activeSlide = items[currentIndex].node
 
     const onClick = (index) => {
-        setLightBox(true)
+        setModal(true)
         setCurrentIndex(index)
     }
 
@@ -89,26 +89,26 @@ export default () => {
 
             )}
 
-            {lightBox &&
+            {modal &&
                 <div
-                    className={`portfolio__lightbox`}>
+                    className={`portfolio__modal`}>
 
                     <div
-                        className="lightbox__overlay"
-                        onClick={() => setLightBox(false)} />
+                        className="modal__overlay"
+                        onClick={() => setModal(false)} />
 
                     <button
                         onClick={() => previous()}
-                        className="lightbox__previous"
+                        className="modal__previous"
                     />
 
                     <div
-                        className={`lightbox__content lightbox__content--slide-${slideSide}`}
+                        className={`modal__content modal__content--slide-${slideSide}`}
                         onAnimationEnd={() => setSlideSide(null)}>
 
                         <button
-                            onClick={() => setLightBox(!lightBox)}
-                            className="lightbox__close"
+                            onClick={() => setModal(!modal)}
+                            className="modal__close"
                         />
 
                         {activeSlide.img &&
@@ -136,7 +136,7 @@ export default () => {
 
                     <button
                         onClick={() => next()}
-                        className="lightbox__next"
+                        className="modal__next"
                     />
                 </div>
             }
